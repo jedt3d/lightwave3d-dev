@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="th" data-theme="dark">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark light">
+<title>LightWave Developer Workbench</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Sarabun:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="./assets/tokens.css"><link rel="stylesheet" href="./assets/style.css">
+<script defer src="./assets/course.js"></script><script defer src="./assets/app.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">ข้ามไปยังเนื้อหา</a>
+<header class="chrome"><div class="titlebar"><div class="brand"><svg width="26" height="26" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 30 10v12l-14 8L2 22V10Z M2 10l14 8 14-8 M16 18v12" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>LightWave Developer Workbench</div><span class="mono build">LSCRIPT / LW 2026 TARGET · v0.1</span></div>
+<nav class="toolbar" aria-label="Workspace"><a class="tab" href="#course">Course</a><a class="tab" href="#module-01">Modeler</a><a class="tab" href="#module-13">Layout</a><a class="tab" href="#lab">Graphics Lab</a><a class="tab" href="#cases">Code Reading</a><a class="tab" href="#references">Source Library</a><a class="tab" href="#progress">Progress</a><div class="theme-controls" role="group" aria-label="Theme"><button data-theme-choice="dark">Modern Dark</button><button data-theme-choice="light">Classic Light</button></div></nav></header>
+<div class="workspace">
+<aside class="navigator"><div class="panel-title">COURSE NAVIGATOR</div><div class="search"><label for="search">ค้นหาบทเรียน</label><input id="search" type="search" placeholder="Vector, Mesh, UI..."></div><nav id="modules" aria-label="Course modules"></nav><div class="nav-progress"><span id="nav-count" class="mono">0 / 16</span><progress id="nav-progress" max="16" value="0" aria-label="Course progress"></progress></div></aside>
+<main id="main" tabindex="-1"><div id="view"></div><noscript>กรุณาเปิด JavaScript เพื่อใช้ Course Navigator และ Graphics Lab</noscript></main>
+<aside class="inspector" id="inspector" aria-label="Lesson Inspector"></aside>
+</div>
+<footer class="status"><span id="status" class="mono">READY / COURSE</span><span class="warning">Runtime: ยังไม่ได้ทดสอบใน LW 2026</span><a href="https://github.com/jedt3d/lightwave3d-dev">GitHub</a></footer>
+</body></html>

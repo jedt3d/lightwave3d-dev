@@ -1,0 +1,16 @@
+LIGHTWAVE RUNTIME COMPATIBILITY REPORT
+Date:
+LightWave version/build:
+OS / architecture:
+Host: Modeler / Layout
+Script type and path:
+Install/run mechanism:
+LScript runtime visible?:
+Hello script expected: message box, no mesh changes
+Observed:
+Requester expected: defaults, OK returns 5, Cancel no changes
+Observed:
+LScript Interface Designer present?:
+Screenshot / error message:
+Result: PASS / FAIL / NOT TESTED
+Do not mark current compatibility verified until tested on the installed version.
