@@ -20,7 +20,7 @@
 | 15 | Procedural Geometry & Motion Graphics | Mini Cloner, baked first |
 | 16 | Plugin Engineering & Python Migration | Compare LScript / Python |
 
-Initial release contains starter lessons 01–04 and first code-reading case, not the full 80-hour curriculum. Other modules are outlines.
+All 16 modules include learning objectives, a worked example, a workshop, and references. The 80-hour estimate remains a proposed teaching schedule. Worked results are independent of host acceptance tests.
 
 Method: read free resource → predict outcome → run a minimal example → inspect third-party source → explain algorithm → modify one behavior → test and document.
 

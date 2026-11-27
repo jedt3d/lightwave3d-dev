@@ -24,7 +24,7 @@
         <p><code>${model('Measure_Points.ls')}:38–87, 135–140</code> ตรวจว่ามีอย่างน้อยสองจุด อ่านจุดแรกและสุดท้ายจากลำดับใน <code>points</code> แล้วคำนวณระยะตรงและระยะรายแกน ถ้ามีมากกว่าสองจุด สคริปต์เปลี่ยน Selection ชั่วคราวก่อนเปิด Requester และมีคำสั่งคืน Selection หลังทาง OK</p>
         <details><summary>แบบฝึกหัด · หาเส้นทาง Cancel</summary><p>เมื่อ Cancel โค้ดออกจากฟังก์ชันก่อนถึงคำสั่งคืน Selection ให้บันทึกเป็นข้อสังเกตจาก Source แล้วใช้ Object สำเนาทดสอบแยกว่าหน้าจอจริงคืน Selection อย่างไร</p></details>
         <h2>4. Workshop · Radial Array</h2>
-        <p><code>${model('radial_array.ls')}:59–91</code> อ่านค่าจาก Requester แล้วส่ง Count, Center และ Axis เข้าสู่คำสั่ง Rotate/Paste ใน Undo Group ลองคำนวณมุมสำหรับ Count 4 กับ 7 โค้ดแปลงผลหารเป็นจำนวนเต็ม จึงควรสังเกตช่องว่างช่วงปิดวงเมื่อ Count หาร 360 ไม่ลงตัว ทดลองด้วย geometry สำเนาและตรวจจำนวนชิ้นจริงใน Modeler</p>`,
+        <p><code>${model('radial_array.ls')}:59–91</code> อ่านค่าจาก Requester แล้วส่ง Count, Center และ Axis เข้าสู่คำสั่ง Rotate/Paste ใน Undo Group ลองคำนวณมุมสำหรับ Count 4 กับ 7 โค้ดแปลงผลหารเป็นจำนวนเต็ม จึงควรสังเกตช่องว่างช่วงปิดวงเมื่อ Count หาร 360 ไม่ลงตัว ทดลองด้วย geometry สำเนาและตรวจจำนวนชิ้นจริงใน Modeler</p><p>เริ่มฝึกจาก Box เดียวใน Foreground Layer แล้วทำซ้ำเมื่อเลือกเพียงบางส่วน จดจำนวนชิ้นก่อนทำ หลังทำ และหลัง Undo หนึ่งครั้ง เปรียบเทียบกับ <a href="#module-08">ตารางมุมและ Selection ใน Module 08</a></p>`,
     },
     {
       id: 'review-ui',
@@ -34,7 +34,7 @@
       body: `
         <h2>1. Requester Lifecycle</h2>
         <p><code>reqbegin()</code> เปิดช่วงสร้าง UI ฟังก์ชันอย่าง <code>ctlnumber()</code> คืน Control Handle ให้เก็บไว้ใช้กับ <code>getvalue()</code> และ <code>setvalue()</code> จากนั้น <code>reqpost()</code> รอผล OK/Cancel เก็บค่าที่ต้องใช้ก่อน <code>reqend()</code> แล้วค่อยเรียกคำสั่งที่เปลี่ยน Scene หรือ Mesh</p>
-        <p><a href="#module-04">ทบทวน Distance Inspector ใน Module 04</a> แล้ววาดลำดับ <code>Control → Callback → Draft → Preview → OK/Cancel</code> แยกค่าใน Control ออกจากผลที่ยืนยันแล้ว</p>
+        <p>คิดถึงช่อง Factor ที่เพิ่งพิมพ์เป็น 3 ค่า 3 ยังเป็น Draft เมื่อกด Preview โปรแกรมคำนวณให้ดู แต่จะใช้ค่าล่าสุดจริงเมื่อผู้ใช้กด Apply ส่วน Cancel ทิ้งการแก้ครั้งนั้น</p><p><a href="#module-04">ทบทวน Distance Inspector ใน Module 04</a> แล้ววาดลำดับ <code>Control → Callback → Draft → Preview → OK/Cancel</code> แยกค่าใน Control ออกจากผลที่ยืนยันแล้ว</p>
         <h2>2. ผูก Action กับ Callback</h2>
         <div class="table-scroll"><table><thead><tr><th scope="col">Event</th><th scope="col">Binding หรือจุดรับผล</th><th scope="col">หน้าที่</th></tr></thead><tbody>
           <tr><td>ค่า Control เปลี่ยน</td><td><code>ctlrefresh()</code></td><td>อ่าน Input ที่จำเป็น แล้วปรับ Draft หรือ UI ที่ขึ้นกับค่าใหม่</td></tr>
@@ -68,7 +68,7 @@
         <p><code>${layout('selectchildren.ls')}:14–34, 89–101</code> อ่าน Item ที่เลือกจาก <code>Scene()</code> แล้วให้ <code>findChildren()</code> เก็บ Root ก่อนลงไปหา Child ผ่าน <code>firstChild()</code> และ <code>nextChild()</code> การอ่านจุดนี้อธิบายได้ว่าทำไม Root อยู่ในรายการด้วย</p>
         <h2>3. จาก Item ID สู่ Selection</h2>
         <p><code>${layout('selectchildren.ls')}:36–85</code> ใช้ <code>genus</code> แยก Mesh, Bone, Light และ Camera แต่ละกลุ่มเริ่มด้วย <code>SelectItem()</code> แล้วใช้ <code>AddToSelection()</code> กับรายการถัดไป ตรวจผลของการสลับ Edit Mode ใน Scene ทดสอบก่อนสรุปว่าผู้ใช้จะเห็น Selection รวมของทุกชนิดพร้อมกัน</p>
-        <details><summary>Workshop · Trace ต้นไม้ทีละรายการ</summary><p>ให้ Root มีลูก A และ B และ A มีลูก A1 ถ้า Host คืนลูกตามลำดับนี้ รายการที่ Recursive Function เก็บจะเป็น Root, A, A1, B ทดสอบเพิ่มกับ Root ที่ไม่มีลูกและ Scene ที่ไม่มี Selection</p></details>`,
+        <details><summary>Workshop · Trace ต้นไม้ทีละรายการ</summary><p>ให้ Root มีลูก A และ B และ A มีลูก A1 ถ้า Host คืนลูกตามลำดับนี้ รายการที่ Recursive Function เก็บจะเป็น Root, A, A1, B ทดสอบเพิ่มกับ Root ที่ไม่มีลูกและ Scene ที่ไม่มี Selection</p></details><p>บันทึกผลสองคอลัมน์ ระหว่างรายการที่ Recursive Function เดินผ่าน และรายการที่ถูกเลือกใน Layout หลังสลับ Edit Mode ถ้าต่างกัน ให้ตาม <code>SelectItem()</code> และ <code>AddToSelection()</code> ตามลำดับใน Source</p><p>อ่าน <a href="#module-13">Module 13</a> เพื่อทบทวน Local/World Transform ของ Item ที่มี Parent</p>`,
     },
     {
       id: 'review-animation',
@@ -82,7 +82,7 @@
         <p><code>${layout('shift_keys.ls')}:13–25</code> อ่าน Key IDs และเวลาของแต่ละ Key เพิ่ม Offset แล้วลบ Remainder จากเวลาใหม่ก่อน <code>moveKey()</code> คำนวณเวลาคาดหมายบนกระดาษก่อนทดลอง โดยเฉพาะเมื่อเวลาเป็นลบหรือใกล้ขอบเฟรม</p>
         <details><summary>แบบฝึกหัด · แปลง Offset เป็นเฟรม</summary><p>ที่ 24 fps การเพิ่ม 0.5 วินาทีเท่ากับ 12 เฟรม ดังนั้น Key ที่เฟรม 10 มีเป้าหมายทางคณิตศาสตร์ที่เฟรม 22 ลอง Offset ที่ไม่ลงเฟรมและสังเกต Floating-point Roundoff จากผลจริงแยกไว้</p></details>
         <h2>3. Workshop · ตรวจ Collision ก่อนย้าย</h2>
-        <p>ใช้ Scene สำเนาและทำตาราง Channel, Old Frame, Target Frame และ Existing Key ทดลอง Offset บวกและลบ แล้วตรวจว่าการย้าย Key ที่ทับเวลาเดิมส่งผลอย่างไร แบบฝึกต่อยอดคือเขียนขั้น Preview ที่รายงานคู่เฟรมและ Collision ก่อนเรียกคำสั่งแก้ Keyframe</p>`,
+        <p>ใช้ Scene สำเนาและทำตาราง Channel, Old Frame, Target Frame และ Existing Key ทดลอง Offset บวกและลบ แล้วตรวจว่าการย้าย Key ที่ทับเวลาเดิมส่งผลอย่างไร แบบฝึกต่อยอดคือเขียนขั้น Preview ที่รายงานคู่เฟรมและ Collision ก่อนเรียกคำสั่งแก้ Keyframe</p><p>เริ่มทดสอบ Position X เพียง Channel เดียวที่มี Key เฟรม 10 กับ 20 แล้วค่อยลองหลาย Channel ให้บันทึก FPS, Offset เป็นวินาที, เฟรมที่คาด และเฟรมที่เห็นใน Graph Editor เทียบกับ <a href="#module-14">สูตรใน Module 14</a></p>`,
     },
     {
       id: 'review-materials',
@@ -96,7 +96,7 @@
         <p><code>${model('Select_Surfaces.ls')}:39–78</code> เดินรายชื่อด้วย <code>nextsurface()</code> ให้ผู้ใช้เลือกชื่อ แล้วใช้ <code>selpolygon()</code> แบบ SET หรือ CLEAR ตามโหมด การ Trace ควรเก็บทั้ง Display List หลังกรองและ Surface Name ที่เลือกจริง</p>
         <h2>3. Reassign แบบ Batch</h2>
         <p><code>${model('Reassign_Surface.ls')}:41–88, 159–236</code> เก็บรายชื่อ Surface และข้อมูล Polygon จากนั้นประเมินกฎ Contains, Starts With, Ends With หรือ Exact ก่อนใช้ <code>changesurface()</code> เมื่อพบรายการที่ตรงกฎ</p>
-        <details><summary>Workshop · ออกแบบ Dry Run สำหรับ Material Cleanup</summary><p>สมมติชื่อ <code>Body_Paint</code>, <code>Body_Decal</code>, <code>Trim_Metal</code> ให้ทำนายผลของ Starts With <code>Body_</code> และ Exact <code>Body_Paint</code> ก่อนทดลองกับสำเนา ตรวจทั้งรายการชื่อที่ตรงและจำนวน Polygon ที่ได้รับผล</p></details>`,
+        <details><summary>Workshop · ออกแบบ Dry Run สำหรับ Material Cleanup</summary><p>สมมติชื่อ <code>Body_Paint</code>, <code>Body_Decal</code>, <code>Trim_Metal</code> ให้ทำนายผลของ Starts With <code>Body_</code> และ Exact <code>Body_Paint</code> ก่อนทดลองกับสำเนา ตรวจทั้งรายการชื่อที่ตรงและจำนวน Polygon ที่ได้รับผล</p></details><p>ใช้ Object สำเนาที่มีสาม Polygon กำหนดสอง Polygon ให้ใช้ <code>Body_Paint</code> และอีกหนึ่งให้ใช้ <code>Trim_Metal</code> ก่อนเปลี่ยนชื่อให้ Dry Run รายงานหนึ่งชื่อ แต่สอง Polygon ที่ได้รับผล หลัง Apply ตรวจว่า Polygon ของ <code>Trim_Metal</code> คง Assignment เดิม</p><p>ทบทวนความต่างระหว่าง UV, Normal และ Surface Name ใน <a href="#module-11">Module 11</a></p>`,
     },
     {
       id: 'review-nodes',
@@ -115,7 +115,7 @@
         </tbody></table></div>
         <h2>3. Workshop · Diagnose กราฟหนึ่งเส้น</h2>
         <p>วาด Output ต้นทาง ชนิดข้อมูล และ Input ปลายทาง บันทึกภาพก่อนและหลังเปลี่ยน Roughness ใน Scene สำเนา ถ้า Preview ไม่เปลี่ยน ให้ตรวจ Surface ที่ Polygon อ้างถึง, การเชื่อมต่อ Port และผลของค่าที่ปลายทางตามลำดับ</p>
-        <details><summary>ทบทวน · UI Event ต่างจาก Shading Evaluation อย่างไร</summary><p>Callback ของ Requester ตอบสนองต่อการกระทำผู้ใช้ ส่วน Node Evaluation ให้ค่า ณ Shading Context ที่ขอ Output เวลาเขียนคำอธิบายให้ระบุว่าใครเป็นผู้เรียกและข้อมูลไหลจากไหนไปไหน</p></details>`,
+        <details><summary>ทบทวน · UI Event ต่างจาก Shading Evaluation อย่างไร</summary><p>Callback ของ Requester ตอบสนองต่อการกระทำผู้ใช้ ส่วน Node Evaluation ให้ค่า ณ Shading Context ที่ขอ Output เวลาเขียนคำอธิบายให้ระบุว่าใครเป็นผู้เรียกและข้อมูลไหลจากไหนไปไหน</p></details><p>ในการเทียบ Roughness ให้ล็อก Camera, Light และ Base Color แล้วเก็บภาพสองค่าในมุมเดิม หากผลดูเหมือนกัน ให้ตรวจว่ากราฟต่อเข้ากับ Material ที่ผิวใช้จริง และจดว่าเปลี่ยนค่าใดที่ Port ใดก่อนสรุปผล</p>`,
     },
   ];
 
