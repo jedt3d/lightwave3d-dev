@@ -23,3 +23,23 @@
 Initial release contains starter lessons 01–04 and first code-reading case, not the full 80-hour curriculum. Other modules are outlines.
 
 Method: read free resource → predict outcome → run a minimal example → inspect third-party source → explain algorithm → modify one behavior → test and document.
+
+## LScript Course Reviews
+
+Six short courses built from source and SDK documentation found in the macOS
+LightWave 3D 2024.1.0 installation. The bundled script directory contains 193
+readable `.ls` files, including 68 in Modeler. Relative paths and line ranges in
+the lessons identify the installed files for code reading.
+
+| Course | Practice |
+|---|---|
+| [Modeler](./index.html#review-modeler) | Primitives, Point IDs, Selection Modes, Bounding Box, and Radial Array |
+| [LScript UI & Action Events](./index.html#review-ui) | Requester lifecycle, Control Callbacks, Preview, Apply, Cancel, and Undo design |
+| [Layout](./index.html#review-layout) | Scene Items, hierarchy traversal, and selection |
+| [Animation](./index.html#review-animation) | Channel Object Agents, frame-grid arithmetic, and keyframe moves |
+| [Materials](./index.html#review-materials) | Surface names, polygon assignment, and dry-run planning |
+| [Nodes](./index.html#review-nodes) | Shading data flow, Port Types, and reading the installed C SDK documentation |
+
+The UI course includes a browser simulation and an original
+[Requester Events LScript](./examples/requester_events.ls). Runtime exercises
+include expected outcomes and still need execution in Modeler or Layout.

@@ -46,3 +46,17 @@
 @media(prefers-reduced-motion:reduce){
   .motion-ready #view.route-enter,.motion-ready #inspector.route-enter{animation:none}
 }
+
+/* LScript tokens shared by the course and local Tutor. */
+pre code :is(.ls-keyword,.ls-directive) { color: var(--lw-keyword); }
+pre code .ls-string { color: var(--lw-string); }
+pre code .ls-comment { color: var(--lw-comment); }
+pre code .ls-number { color: var(--lw-number); }
+pre code :is(.ls-function,.ls-operator) { color: var(--lw-accent); }
+
+.review-course p code, .review-course li code, .review-source code { overflow-wrap: anywhere; }
+.requester-controls { border: 1px solid var(--lw-border); min-width: 0; margin: 0 0 .75rem; }
+.requester-controls label { display: inline-grid; gap: 4px; max-width: 100%; margin: 0 .5rem .5rem 0; }
+.requester-controls input { width: 9rem; max-width: 100%; }
+.requester-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.requester-log { padding-inline-start: 1.5rem; }
