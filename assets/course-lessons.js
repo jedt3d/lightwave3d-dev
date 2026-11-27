@@ -10,6 +10,8 @@ Object.assign(window.WB.lessons, {
       <p>ตัวอย่างบนระนาบ XY ให้ C = (2, 1), P = (3, 1) และหมุนทวนเข็มนาฬิกา 90° จะได้ P − C = (1, 0) หมุนแล้วเป็น (0, 1) บวก C ได้ P′ = (2, 2)</p>
       <h2>ลำดับของ Transform</h2>
       <p>เริ่มที่ (1, 0) ถ้าหมุน 90° รอบ Origin ก่อนแล้วเลื่อน X อีก 2 จะได้ (2, 1) ถ้าเลื่อนก่อนแล้วหมุนจะได้ (0, 3) ให้เขียนลำดับเป็นคำพูดก่อนจัด Matrix เพื่อหลีกเลี่ยงความสับสนเรื่อง Row/Column convention</p>
+      <h2>Interactive Lab · Custom Pivot</h2>
+      <div data-three-lab="pivot"></div>
       <h2>Workshop · Custom Pivot</h2>
       <p>สร้างจุดทดสอบหนึ่งจุดกับจุดอ้างอิง Pivot ทำตาราง Before, Pivot, Transform และ Expected แยก calculation ออกจากคำสั่ง Modeler ตรวจกรณีมุม 0°, 90° และจุดที่อยู่บน Pivot เอง แล้วเทียบแกนและทิศหมุนกับ Host</p>
       <details><summary>เฉลย · Scale รอบ Pivot</summary><p>ถ้า C = (2, 1), P = (3, 1) และ Scale X × 2 ค่า Offset จาก C เพิ่มจาก 1 เป็น 2 ผลคือ (4, 1) จุดที่ตรง Pivot จะอยู่ที่เดิม</p></details>
@@ -64,6 +66,8 @@ Object.assign(window.WB.lessons, {
       <p>ให้ Face A = [1, 2, 3] และ Face B = [3, 2, 4] ทั้งสอง Face ใช้ Edge 2–3 ร่วมกัน แม้เดินผ่านคนละทิศ ถ้าตรวจการใช้ Edge ให้เก็บคู่ ID แบบเรียงน้อยไปมาก และเก็บทิศแยกไว้เมื่อจะตรวจ Winding</p>
       <h2>จากตำแหน่งใกล้กันไปสู่ Candidate</h2>
       <p>Point 7 และ Point 8 อาจอยู่ตำแหน่งเดียวกันแต่คนละ ID กำหนด Tolerance ในหน่วย Scene และเปรียบเทียบระยะกำลังสองกับ Tolerance² การตัดสินใจ Weld ต้องทราบว่ากระทบ Face ใดบ้าง เช่น Face อาจเหลือจุดต่างกันไม่ถึงสามจุดหลังรวม</p>
+      <h2>Interactive Lab · ตรวจ Mesh</h2>
+      <div data-three-lab="mesh"></div>
       <h2>Workshop · Mesh Doctor แบบอ่านอย่างเดียว</h2>
       <p>สำหรับ Mesh เล็ก ให้ทำตาราง Point ID, Position และ Faces ที่อ้างถึง แล้วรายงาน Edge ที่มี Face ใช้หนึ่งหน้า สองหน้า และมากกว่าสองหน้า สร้างรายชื่อ Candidate ก่อนเขียนคำสั่ง Weld และตรวจว่า Candidate ซ้อนกันแบบ A↔B↔C จะรวมแบบกลุ่มหรือแบบคู่</p>
       <details><summary>เฉลย · Edge ใช้ร่วมกับ Weld ที่ขอบ</summary><p>ในตัวอย่าง A/B มี Edge ร่วมหนึ่งเส้นและ Boundary Edges สี่เส้น ถ้า Weld ID 1 เข้ากับ 2 ใน Face A จะเหลือจุดต่างกันเพียงสองจุด ให้รายงาน Face ที่เสื่อมสภาพก่อนอนุญาต Apply</p></details>`,
