@@ -47,3 +47,9 @@ These are project design tokens, not official LightWave tokens. Shared component
 
 ## Typography
 Body 16 px with 1.75 line-height; UI labels 13–14 px; lesson title 30 px SemiBold. The same typography applies to both themes.
+
+## Motion & iconography (v0.1.1)
+- Motion tokens: fast 100 ms, normal 160 ms, reveal 180 ms; easing cubic-bezier(.2,.65,.3,1); max route entrance offset 3 px.
+- Only animate intentional interaction: control hover/press, selected states, theme surfaces, new route entrance, and supported disclosure expand/collapse. Initial load and progress updates do not replay route entrance. Keep geometry updates, scroll, and layout calculations immediate.
+- Respect prefers-reduced-motion; use native details behavior on browsers without progressive disclosure support. No infinite motion, large slides, or blocking transitions.
+- Toolbar: 16px inline outline SVG preceding each text label; compact 34px Moon/Sun theme buttons with accessible names and tooltips. Header icon is a locally authored SVG interpretation of the LightWave spiral emblem (reference: https://www.bhphotovideo.com/c/product/1577774-REG/lightwave_lw_2020eu_educational_lightwave_3d.html). Not an official vendor-supplied vector. LightWave marks belong to their respective owner; this is an unofficial educational site.
