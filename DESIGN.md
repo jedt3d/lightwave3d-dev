@@ -39,8 +39,11 @@ These are project design tokens, not official LightWave tokens. Shared component
 ## UI principles
 - Compact text toolbars, course navigator, viewport, lesson inspector and status bar.
 - Raised controls: top/left highlight and bottom/right shade; reverse for pressed and recessed input surfaces.
-- IBM Plex Sans Thai for reading, IBM Plex Mono for code and numeric fields.
+- **Mandatory Thai Looped:** IBM Plex Sans Thai Looped for every Thai text layer (body, heading, label, button and mixed Thai/English); Sarabun as looped fallback. No loopless Thai. IBM Plex Mono for code and numeric values only; any Thai glyphs must use a looped fallback.
 - Classic Light: inspired by LightWave 7-era chrome, with a lighter reading canvas.
 - Modern Dark: inspired by contemporary LightWave UI.
 - 4 px spacing grid, 2 px control radius; preserve keyboard focus and use text labels alongside status colors.
 - Responsive layout and browser accessibility still require implementation and QA. Theme switch in Figma is a design concept, not a functioning website.
+
+## Typography
+Body 16 px with 1.75 line-height; UI labels 13–14 px; lesson title 30 px SemiBold. The same typography applies to both themes.
